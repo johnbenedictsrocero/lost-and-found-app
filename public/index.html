@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost and Found System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Lost and Found System</h1>
+
+        <!-- Form Container -->
+        <div class="form-container">
+
+            <h2 id="formTitle">Post Lost Item</h2>
+
+            <form id="itemForm">
+
+                <input type="hidden" id="itemMongoId">
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="itemname">Item Name</label>
+                    <input
+                        type="text"
+                        id="itemname"
+                        placeholder="Enter text..."
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Name of Finder</label>
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter text..."
+                        required
+                    >
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="contact">Contact Info</label>
+                    <input
+                        type="text"
+                        id="contact"
+                        placeholder="Enter text..."
+                        required
+                    >
+                </div>
+
+                 <div class="form-group">
+                    <label for="image">Image</label>
+                    <input 
+                        type="file" 
+                        id="image" 
+                        accept="image/*"
+                        required
+                    >
+                </div>
+            </div>
+
+                <button type="submit" id="submitButton">
+                    Submit
+                </button>
+
+                <button
+                    type="button"
+                    id="cancelButton"
+                    class="cancel-button"
+                    style="display: none;"
+                >
+                    Cancel
+                </button>
+
+            </form>
+
+            <p id="message"></p>
+
+        </div>
+
+
+        <!-- Records Container -->
+        <div class="records-container">
+
+            <h2>Lost Items</h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Name of Finder</th>
+                        <th>Contact Info</th>
+                        <th>Image</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="itemTableBody">
+                    <!-- Item records will be displayed here -->
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <!-- Full Size Image Modal Popup -->
+    <div id="imageModal" class="image-modal" onclick="closeImageModal()">
+        <img id="modalImg" src="" alt="Full Size Preview">
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
